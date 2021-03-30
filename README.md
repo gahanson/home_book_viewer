@@ -1,22 +1,38 @@
-# Book Viewer (home_book_viewer_dev)
+## Home Book Viewer  
 
-A Quasar Framework app
+**note: this project is a work in-progress**  
 
-## Install the dependencies
-```bash
-npm install
-```
+- a frontend web app (SPA) to manage and view epub and pdf files on a LAN  
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
+## Technologies  
 
+- node / npm  
+- Quasar Framework (vue.js based)  
+- axios  
 
-### Build the app for production
-```bash
-quasar build
-```
+## Requirements  
 
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+- .env file in project root in following format  
+VUE_APP_SONG_API_IPADDRESS=  
+VUE_APP_SONG_API_KEY=  
+
+- instance of home_books_server running on LAN server  
+- instance of home_book_api running on LAN server  
+- a postgresql server running on LAN  
+
+## Dev  
+
+**Install the dependencies**  
+npm install  
+npm install -g @quasar/cli  
+quasar ext add @quasar/dotenv
+
+**Run development server with auto reload on code changes**  
+quasar dev  
+
+## Deploy  
+
+- deploy to a docker container using command "docker-compose -d --build"  
+
+- this is a multi-stage build, first docker will build the quasar app in a node based container  
+and then will copy the built/minimized code to an nginx container which will then run and serve the web app
