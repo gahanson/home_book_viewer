@@ -13,8 +13,8 @@
 ## Requirements  
 
 - .env file in project root in following format  
-VUE_APP_SONG_API_IPADDRESS=  
-VUE_APP_SONG_API_KEY=  
+VUE_APP_BOOK_API_IPADDRESS=  
+VUE_APP_BOOK_API_KEY=  
 
 - instance of home_books_server running on LAN server  
 - instance of home_book_api running on LAN server  
